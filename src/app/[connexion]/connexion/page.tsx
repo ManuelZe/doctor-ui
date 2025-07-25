@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { UserPen, KeySquareIcon } from "lucide-react";
 
 export default function ConnexionPage() {
 
@@ -55,15 +56,15 @@ export default function ConnexionPage() {
           exit={{ x: 0, opacity: 0 }}
           transition={{ duration: 0.5 }}>
         <div>
-            <label htmlFor="email" className="mb-2 font-serif text-xs text-black">Username :</label>
             <div className="mb-5 flex items-center justify-between gap-2">
+              <UserPen className="text-gray-400" />
               <input type="text" value={username} placeholder="Entrez votre Username"
               className="block w-full placeholder:text-xs items-center-safe rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2  focus:outline-indigo-600"
               onChange={(e) => setUsername(e.target.value)} />
             </div>
 
-            <label htmlFor="email" className="mb-2 font-serif text-xs text-black">Password :</label>
             <div className="flex items-center justify-between gap-2">
+              <KeySquareIcon className="text-gray-400" />
               <input type="password" value={password} placeholder="Entrez votre Password"
               className="block w-full placeholder:text-xs items-center-safe rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2  focus:outline-indigo-600"
               onChange={(e) => setPassword(e.target.value)} />
