@@ -20,6 +20,7 @@ export async function POST(req: Request) {
         return redirect('/connexion')
     }
     else {
-        return new Response('Unauthorized', { status: 401 }) // Return early if no token
+        return redirect('/email')
+        // return new Response('Unauthorized', { status: 401 }) // Return early if no token
     }
 }

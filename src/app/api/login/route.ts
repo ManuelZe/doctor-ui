@@ -14,6 +14,11 @@ export async function POST(req: Request) {
     body: JSON.stringify({ username, password, remember_me }),
   })
 
+  const cookieStore = await cookies()
+
+  const all = cookieStore.getAll()
+  all.forEach(c => cookieStore.delete(c.name))
+
   const data = await response.json()
   console.log(data)
 
@@ -21,17 +26,17 @@ export async function POST(req: Request) {
     return new Response('Unauthorized', { status: 401 }) // Return early if no token
   }
 
-  const {token} = data.access_token
-  const {matricule} = data["data"]["username"]
-  const {doctor_id} = data["data"]["doctor_id"]
-  const {email} = data["data"]["email"]
+  const token = data.access_token
+  const matricule = data["data"]["username"]
+  const doctor_id = data["data"]["doctor_id"]
+  const email = data["data"]["email"]
   const name = data["data"]["first_name"]+ " "+ data["data"]["last_name"]
 
-  ;(await cookies()).set('access_token', token, { httpOnly: true, path: '/' })
-  ;(await cookies()).set('username', matricule, { httpOnly: true, path: '/' })
-  ;(await cookies()).set('doctor_id', doctor_id, { httpOnly: true, path: '/' })
-    ;(await cookies()).set('email', email, { httpOnly: true, path: '/' })
-    ;(await cookies()).set('name', name, { httpOnly: true, path: '/' })
+  cookieStore.set('access_token', token)
+  cookieStore.set('username', matricule)
+  cookieStore.set('doctor_id', doctor_id)
+  cookieStore.set('email', email)
+  cookieStore.set('name', name)
 
   redirect('/dashboard')
 }
