@@ -29,8 +29,8 @@ export function RealisationActuel({ list_patient_name, montant_prescription, mon
         </h1>
       </div>
        <div className="flex items-center justify-center-safe ">
-        <div className="flex items-center justify-center rounded-lg w-12 h-12 bg-orange-600">
-          <SquareActivityIcon className="size-8 text-orange-100 "></SquareActivityIcon>
+        <div className="flex items-center justify-center rounded-lg w-12 h-12 bg-red-600">
+          <SquareActivityIcon className="size-8 text-red-100 "></SquareActivityIcon>
         </div>
       </div>
     </div>

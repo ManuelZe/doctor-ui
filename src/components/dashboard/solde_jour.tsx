@@ -16,10 +16,10 @@ import {
 
 export function SoldeJour({ data, commission, data_patients, number, message, ...props }: SoldeJourProps) {
   return (
-    <div className="grid grid-cols-2 gap-2 bg-blue-100/50 aspect-video rounded-xl text-center pb-2">
+    <div className="grid grid-cols-2 gap-2 bg-orange-100/50 aspect-video rounded-xl text-center pb-2">
       <div className="col-span-2 col-start-1 pl-4 pt-4">
-        <h1 className="text-l tracking-tight text-balance text-left font-semibold ">Solde Principal</h1>
-        <h3 className="text-xs text-left font-ligth ">(Du 21 du mois passé au 20 de ce mois)</h3>
+        <h1 className="text-l tracking-tight text-balance text-left font-semibold ">Solde du jour</h1>
+        <h3 className="text-xs text-left font-ligth ">(La totalité des commissions générées ce jour.)</h3>
       </div>
       <div className="justify-center-safe justify-items-center">
         <h1 className="scroll-m-20 text-xl font-bold tracking-tight text-balance">
@@ -27,8 +27,8 @@ export function SoldeJour({ data, commission, data_patients, number, message, ..
         </h1>
       </div>
        <div className="flex items-center justify-center-safe ">
-        <div className="flex items-center justify-center rounded-lg w-12 h-12 bg-blue-600">
-          <BadgeDollarSign className="size-8 text-blue-100 "></BadgeDollarSign>
+        <div className="flex items-center justify-center rounded-lg w-12 h-12 bg-orange-600">
+          <BadgeDollarSign className="size-8 text-orange-100 "></BadgeDollarSign>
         </div>
       </div>
     </div>

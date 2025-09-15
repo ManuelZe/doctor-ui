@@ -10,7 +10,10 @@ export async function TodayCommission(doctor_id:number) {
 
     if (!donnees.Data) {
       const message = donnees.message
+      return {
+        message: message}
     }
+    
     console.log(donnees)
     
     const data = donnees.Data

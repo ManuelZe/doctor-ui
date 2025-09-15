@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   const password = formData.get('password')
   const remember_me = formData.get('remember_me')
 
-  const response = await fetch('http://65.21.73.170:7600/user/login', {
+  const response = await fetch('http://65.21.73.170:1000/user/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password, remember_me }),

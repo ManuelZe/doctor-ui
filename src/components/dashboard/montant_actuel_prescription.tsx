@@ -28,10 +28,10 @@ export function PrescriptionActuel({ list_patient_name, montant_prescription, mo
               {montant_prescription ? Number(montant_prescription).toLocaleString('fr-FR') + ' FCFA' : '0 FCFA'}
         </h1>
       </div>
-       <div className="flex items-center justify-center-safe ">
-        <div className="flex items-center justify-center rounded-lg w-12 h-12 bg-green-600">
-          <FileCheck2 className="size-8 text-green-100 "></FileCheck2>
-        </div>
+      <div className="flex items-center justify-center-safe ">
+      <div className="flex items-center justify-center rounded-lg w-12 h-12 bg-green-600">
+        <FileCheck2 className="size-8 text-green-100 "></FileCheck2>
+      </div>
       </div>
     </div>
     
